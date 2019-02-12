@@ -1,0 +1,39 @@
+﻿@{ 
+    ViewBag.Title = "Home Page ";
+}
+
+<div class="jumbotron">
+    <h1>Weather Forecast</h1>
+    <p class="lead">Click here for this weeks Weather Forecast!!</p>
+    <button class="btn btn-group-vertical" id="weatherForecast">Get Weather</button>
+</div>
+
+
+@section Scripts {
+
+    @Scripts.Render("~bundles/jqueryval")
+
+    <script language="javascript">
+
+    
+        $(document).ready(function () {
+            $("#weatherForecast").click(function () {
+
+                $.ajax({
+                    type: "GET",
+                    url: http://forecast.weather.gov/MapClick.php?lat=38.4247341&lon=-86.9624086&FcstType=json,
+                    success: function (data) {
+                        alert(data.data.text);
+                    },
+
+                    error: fucntion()( {
+
+                        alert("Error ");
+
+                    }
+            );
+        });
+            
+    </script>
+}
+    
